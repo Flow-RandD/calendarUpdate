@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Bootstrap required meta tags -->
+    	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Meta tags for manifest -->
+	  	<meta name="mobile-web-app-capable" content="yes">
+	  	<meta name="apple-mobile-web-app-capable" content="yes">
+	  	<meta name="application-name" content="calUP">
+	  	<meta name="apple-mobile-web-app-title" content="sorUP">
+	  	<meta name="theme-color" content="#b3ffff">
+	  	<meta name="msapplication-navbutton-color" content="#ffff00">
+	  	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	  	<meta name="msapplication-starturl" content="https://flow-randd.github.io/newStock/">
+	  	
+	  
+	  	<base target="_top">
+	  
+	  	<title>New Stock</title>
+	  
+        <link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <!--link rel="stylesheet" href="style.css" type="text/css"-->
+	  	<link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>    
+    
+  	</head>
+	
+	<body>
+	<!--Bootstrap scripts-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--was 2.1.1, this is not a required BS script but is positioned to let Modal work-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	
+  	<!--bodyInner-->
+	  
+	<div class="jumbotron jumbotron-fluid" style="background-color: #b3ffff;">
+		<div class="container"></div>
+			<img class="container-fluid" src="https://flow-randd.github.io/calendarUpdate/images/Flowstore_Logo_CUT OUT_v1.png" alt="FLOWSTORE SYSTEMS LTD.">
+			<marquee><p class="lead">Calendar Update</p></marquee>
+			<hr class="my-4">
+		</div>
+	</div>
+    <div class="p-3 mb-2 bg-light text-dark" class="container-fluid" id="div1">
+        <h5>Please type the SOR you want to update</h5>
+        <form name="formA">
+            <div class="form-group">
+                <label class="font-weight-bold" id="locationLB">SOR:</label>
+                <input type="text" class="form-control" id="SOR" name="SOR" placeholder="e.g 23775" style="width:100%" autocomplete="off">
+            </div>
+        </form>
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Update this SOR?</h2>
+                </div>
+                <div class="modal-body">
+                    <pre id="contentModal"></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="div2" style="display: none;">
+            Sales Person: <input type="checkbox" id="0" name="Sales"><br>
+            Production: <input type="checkbox" id="1" name="Production"><br>
+            Charlie: <input type="checkbox" id="2" name="Charlie"><br>
+            Sales PC: <input type="checkbox" id="3" name="SalesPC"><br>
+            Customer: <input type="checkbox" id="4" name="Customer"><br>
+            
+            <select id="status">
+                <option value="eventCreated">Event Created</option>
+                <option value="intoProduction">into Production</option>
+                <option value="dateChanged">Target Date Changed</option>
+                <option value="buildComplete">Build complete</option>
+                <option value="qualityComplete">Quality Control complete</option>
+                <option value="customerDeliveryConfirmation">out for Customer Delivery Confirmation</option>
+                <option value="deliveryDateConfirmed">Delivery Date confirmed</option>
+                <option value="transportBooked">Transport booked</option>
+                <option value="dispatched">Dispatched</option>
+            </select>
+        </div>
+
+        <pre id="contentMain"></pre>
+        
+        <div id="image2"></div><p>
+                
+        <div id="clickers">  
+            <!-- Trigger/Open The Modal -->
+            <button class="btn btn-primary" id="myBtn" onclick="sorUpdate()">Update</button>
+            <!-- Clear -->
+            <button class="btn btn-light" onclick="uncheckAll()">Clear</button><p><br><p>
+                
+            <!--Add buttons to initiate auth sequence and sign out-->
+            <button id="authorize-button" style="display: none;">Authorise</button><p>
+            <button id="signout-button" style="display: none;">Sign Out</button>
+        </div>
+
+        <div style="padding-bottom:250px"></div>
+
+        <nav class="navbar fixed-bottom navbar-light bg-light" style="padding-bottom:5px">
+            <a class="navbar ml-auto"><small class="text-muted">Generic terms and conditions</small></a>
+        </nav>
+    </div>
+    
+		<!--general scripts-->  
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!--script src="myscripts.js"></script-->
+        
+        <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks on the button, Update 
+        btn.onclick = function() {
+        sorUpdate();
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+        }
+        </script>
+            
+        <script>
+            function emailAdds(){
+                //$('.modal-header').text('Select email recipients');
+                $('.modal-body').text('Now, please select email recipients...');
+                $('.modal-footer').empty();
+                $('#contentModal').empty();
+                $('#div2').show();
+                document.getElementById("myBtn").onclick = myFunction;
+            }
+            function myFunction(){ 
+                var idArry = [];
+                var labArry = [];
+                for(var i = 0; i<=4; i++){
+                var id = document.getElementById(i).checked;
+                
+                idArry[i] = id;
+                if(id == true){
+                    var label = document.getElementById(i).name;
+                    labArry.push(label);
+                }
+                }
+                var statusSelect = document.getElementById("status");
+                var status = statusSelect.options[statusSelect.selectedIndex].text;
+                //GAS Fulfillment here
+                calendarUpdateFunction(labArry, status);
+            }
+            
+            function sorUpdate(){
+                sorUpdateFunction();
+            }
+            
+            function uncheckAll(){
+            $('input[type="checkbox"]:checked').prop('checked',false);
+            $('input[type="text"], textarea').val('');
+            $('#contentMain').html('');
+            $('#image2').empty();
+            $('#div2').hide();
+            document.getElementById("myBtn").onclick = sorUpdate;
+            window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+            }
+        </script>
+            
+        <!--GOOGLE QUICKSTART CODE-->         
+        <script type="text/javascript">
+            // Client ID and API key from the Developer Console
+            var CLIENT_ID = '1067528895621-gkhph4tkviknsrfqilf0qgksphvmg699.apps.googleusercontent.com';
+            // Array of API discovery doc URLs for APIs used by the quickstart
+            var DISCOVERY_DOCS = ["https://script.googleapis.com/$discovery/rest?version=v1"];
+            // Authorization scopes required by the API; multiple scopes can be
+            // included, separated by spaces.
+            var SCOPES = 'https://www.googleapis.com/auth/spreadsheets https://www.google.com/calendar/feeds';
+            var authorizeButton = document.getElementById('authorize-button');
+            var signoutButton = document.getElementById('signout-button');
+            /**
+             *  On load, called to load the auth2 library and API client library.
+            */
+            function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
+            }
+            /**
+             *  Initializes the API client library and sets up sign-in state
+            *  listeners.
+            */
+            function initClient() {
+            gapi.client.init({
+                discoveryDocs: DISCOVERY_DOCS,
+                clientId: CLIENT_ID,
+                scope: SCOPES
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                authorizeButton.onclick = handleAuthClick;
+                signoutButton.onclick = handleSignoutClick;
+            });
+            }
+            /**
+             *  Called when the signed in status changes, to update the UI
+            *  appropriately. After a sign-in, the API is called.
+            */
+            function updateSigninStatus(isSignedIn) {
+            if (isSignedIn) {
+                authorizeButton.style.display = 'none';
+                signoutButton.style.display = 'block';
+                //callScriptFunction();
+            } else {
+                authorizeButton.style.display = 'block';
+                signoutButton.style.display = 'none';
+            }
+            }
+            /**
+             *  Sign in the user upon button click.
+            */
+            function handleAuthClick(event) {
+            gapi.auth2.getAuthInstance().signIn();
+            }
+            /**
+             *  Sign out the user upon button click.
+            */
+            function handleSignoutClick(event) {
+            gapi.auth2.getAuthInstance().signOut();
+            }
+            /**
+             * Append a pre element to the body containing the given message
+            * as its text node. Used to display the results of the API call.
+            *
+            * @param {string} message Text to be placed in pre element.
+            */
+            function appendPre(message) {
+            var pre = document.getElementById('contentModal');
+            var textContent = document.createTextNode(message + '\n');
+            pre.appendChild(textContent);
+            }
+            /**
+         *Timout function positioned here for variable definition before callScriptFunction
+            */
+            function timeOut(){
+            var preState = document.getElementById('contentMain').innerHTML
+            myTimeout = setTimeout(function(){
+                if (preState==='Loading...'){
+                    alert("It seems you may not have permission to view this information, or you haven't authorised this app.");
+                    $('#contentMain').html('Get outta here, ya filthy animal!');
+                    $('#image2').html('<img src="https://media.giphy.com/media/10K7FlHoiA8Cpq/giphy.gif" alt="Loading" />');
+                }else{
+                }
+                },6500);
+            }
+            
+            
+            /**
+             * Load the API and make an API call.  Display the results on the screen. Used to be callScriptFunction()
+            */
+            function calendarUpdateFunction(labArry, status) {
+            var scriptId = "1E6F27vZSW9_1l4x1_PgCaCGvGUPlUmSbsjQjrzwOiuITXezVlDjOtdq7";
+            
+            //Get SOR from HTML
+            var SOR = document.getElementById("SOR").value;
+            
+            //Clear checkboxes & set pre ready for response
+            $('#contentMain').html('Loading...');
+            $('#div2').hide();
+            //Call timeOut function
+            timeOut();
+            
+            // Call the Execution API run method
+            //   'scriptId' is the URL parameter that states what script to run
+            //   'resource' describes the run request body (with the function name
+            //              to execute)
+            gapi.client.script.scripts.run({
+                'scriptId': scriptId,
+                'resource': {
+                'function': 'calendarUpdate',
+                    'parameters': 
+                    [
+                    SOR,
+                    labArry,
+                    status
+                    ]
+                }
+            }).then(function(resp) {
+                var result = resp.result;
+                if (result.error && result.error.status) {
+                // The API encountered a problem before the script
+                // started executing.
+                appendPre('Error calling API:');
+                appendPre(JSON.stringify(result, null, 2));
+                } else if (result.error) {
+                // The API executed, but the script returned an error.
+                // Extract the first (and only) set of error details.
+                // The values of this object are the script's 'errorMessage' and
+                // 'errorType', and an array of stack trace elements.
+                var error = result.error.details[0];
+                appendPre('Script error message: ' + error.errorMessage);
+                if (error.scriptStackTraceElements) {
+                    // There may not be a stacktrace if the script didn't start
+                    // executing.
+                    appendPre('Script error stacktrace:');
+                    for (var i = 0; i < error.scriptStackTraceElements.length; i++) {
+                    var trace = error.scriptStackTraceElements[i];
+                    appendPre('\t' + trace.function + ':' + trace.lineNumber);
+                    }
+                }
+                } else {
+                // The structure of the result will depend upon what the Apps
+                // Script function returns. Here, the function returns an Apps
+                // Script Object with String keys and values, and so the result
+                // is treated as a JavaScript object (folderSet).
+                clearTimeout(myTimeout);
+                //var calendarResponse = result.response.result;
+                var calendarResponse = "The Calendar Event has been updated, would you like to continue and send email notifications"
+                $('#contentMain').html('');
+                var r = confirm(calendarResponse);
+                if (r == true){
+                    gapi.client.script.scripts.run({
+                    'scriptId': scriptId,
+                    'resource': {
+                    'function': 'emailer',
+                    'parameters': 
+                    [
+                    //emailSubject
+                    labArry
+                    ]
+                    }
+                    }).then(function(resp) {
+                    var result = resp.result;
+                    var emailSet = result.response.result;
+                    alert(emailSet);
+                    });
+                }else {
+                    alert("No emails for you!");
+                }
+                    //appendPre(sorSet);
+                }
+            });
+            }
+            
+            //Called for SOR Update into Modal
+            function sorUpdateFunction() {
+            var scriptId = "1E6F27vZSW9_1l4x1_PgCaCGvGUPlUmSbsjQjrzwOiuITXezVlDjOtdq7";
+            
+            //Get SOR from HTML
+            var SOR = document.getElementById("SOR").value;
+            //Clear checkboxes & set pre ready for response
+            //document.getElementById('content').style.display = 'none';
+            $('#contentMain').html('Loading...');
+            //Call timeOut function
+            timeOut();
+            
+            // Call the Execution API run method
+            //   'scriptId' is the URL parameter that states what script to run
+            //   'resource' describes the run request body (with the function name
+            //              to execute)
+            gapi.client.script.scripts.run({
+                'scriptId': scriptId,
+                'resource': {
+                'function': 'sorUpdate',
+                    'parameters': 
+                    [
+                    SOR
+                    ]
+                }
+            }).then(function(resp) {
+                var result = resp.result;
+                if (result.error && result.error.status) {
+                // The API encountered a problem before the script
+                // started executing.
+                appendPre('Error calling API:');
+                appendPre(JSON.stringify(result, null, 2));
+                } else if (result.error) {
+                // The API executed, but the script returned an error.
+                // Extract the first (and only) set of error details.
+                // The values of this object are the script's 'errorMessage' and
+                // 'errorType', and an array of stack trace elements.
+                var error = result.error.details[0];
+                appendPre('Script error message: ' + error.errorMessage);
+                if (error.scriptStackTraceElements) {
+                    // There may not be a stacktrace if the script didn't start
+                    // executing.
+                    appendPre('Script error stacktrace:');
+                    for (var i = 0; i < error.scriptStackTraceElements.length; i++) {
+                    var trace = error.scriptStackTraceElements[i];
+                    appendPre('\t' + trace.function + ':' + trace.lineNumber);
+                    }
+                }
+                } else {
+                // The structure of the result will depend upon what the Apps
+                // Script function returns. Here, the function returns an Apps
+                // Script Object with String keys and values, and so the result
+                // is treated as a JavaScript object (folderSet).
+                clearTimeout(myTimeout);
+                var sorSet = result.response.result;
+                $('#contentMain').html('');
+                appendPre(sorSet);
+                }
+            //$('.modal-body').html(sorSet);
+            $('#myModal').show()
+            });
+            }
+        </script>
+    
+        <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
+		
+    
+	</body>
