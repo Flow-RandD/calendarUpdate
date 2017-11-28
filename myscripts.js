@@ -174,7 +174,7 @@ window.location.replace(window.location.pathname + window.location.search + wind
     //   'scriptId' is the URL parameter that states what script to run
     //   'resource' describes the run request body (with the function name
     //              to execute)
-    gapi.client.scripts.run({
+    gapi.client.script.scripts.run({
         'scriptId': scriptId,
         'resource': {
         'function': 'calendarUpdate',
@@ -258,7 +258,7 @@ window.location.replace(window.location.pathname + window.location.search + wind
     //   'scriptId' is the URL parameter that states what script to run
     //   'resource' describes the run request body (with the function name
     //              to execute)
-    gapi.client.script.scripts.run({
+    gapi.client.scripts.run({
         'scriptId': scriptId,
         'resource': {
         'function': 'sorUpdate',
