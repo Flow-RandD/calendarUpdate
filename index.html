@@ -72,14 +72,15 @@
             </div>
         </div>
 
-        <div id="div2" style="display: none;">
-            Sales Person: <input type="checkbox" id="0" name="Sales"><br>
-            Production: <input type="checkbox" id="1" name="Production"><br>
-            Charlie: <input type="checkbox" id="2" name="Charlie"><br>
-            Sales PC: <input type="checkbox" id="3" name="SalesPC"><br>
-            Customer: <input type="checkbox" id="4" name="Customer"><br>
-            
-            <select id="status">
+        <form id="div2" style="display: none;">
+	    <div class="form-group">
+            		Sales Person: <input class="form-check-input" type="checkbox" id="0" name="Sales"><br>
+            		Production: <input class="form-check-input" type="checkbox" id="1" name="Production"><br>
+            		Charlie: <input class="form-check-input" type="checkbox" id="2" name="Charlie"><br>
+            		Sales PC: <input class="form-check-input" type="checkbox" id="3" name="SalesPC"><br>
+            		Customer: <input class="form-check-input" type="checkbox" id="4" name="Customer"><br>
+	    </div>
+            <select class="form-control" id="status">
                 <option value="eventCreated">Event Created</option>
                 <option value="intoProduction">into Production</option>
                 <option value="dateChanged">Target Date Changed</option>
@@ -90,7 +91,7 @@
                 <option value="transportBooked">Transport booked</option>
                 <option value="dispatched">Dispatched</option>
             </select>
-        </div>
+        </form>
 
         <pre id="contentMain"></pre>
         
