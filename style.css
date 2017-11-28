@@ -76,3 +76,6 @@ h5 {
     margin: auto;
     width: 80%
   }
+  .modal-header,.modal-footer {
+    background-color: #b3ffff;
+  }
