@@ -304,3 +304,6 @@ window.location.replace(window.location.pathname + window.location.search + wind
     $('#myModal').show()
     });
     }
+
+    onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()"
