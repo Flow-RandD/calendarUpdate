@@ -1,0 +1,26 @@
+{
+  "name": "Calendar Update",
+  "short_name": "calUP",
+  "lang": "en-GB",
+  "icons": [{
+    "src": "images/calendar.png",
+    "type": "image/png",
+    "sizes": "128x128"
+  }, {
+    "src": "images/calendar.png",
+    "type": "image/png",
+    "sizes": "152x152"
+  }, {
+    "src": "images/calendar.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  }, {
+    "src": "images/calendar.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "background_color": "#b3ffff",
+  "start_url": "https://flow-randd.github.io/calendarUpdate/",
+  "display": "fullscreen",
+  "theme_color": "#b3ffff"
+}

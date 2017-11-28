@@ -1,0 +1,78 @@
+h5 {
+    color: #222222;
+    font-family: 'Advent Pro';
+    font-size:20px;
+    margin-top: 0px
+  }
+  h3 {
+    color: #000000;
+    font-family: 'Advent Pro';
+    font-size:18px;
+    margin-top: 0px
+  }
+  html, body {
+    background: #FFFFFF;
+    padding: 0px;
+    height: 100%;
+    width: 99%;
+    margin: auto;
+    overflow:auto;
+    position: relative;
+    background: #FFFFFF; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#b80707,rgba(179,255,255,1));
+    background: -moz-linear-gradient(#b80707, rgba(179,255,255,1));
+    background: -o-linear-gradient(#b80707, rgba(179,255,255,1));
+    background: linear-gradient(#b80707 25%, rgba(179,255,255,1));
+  }
+  #div1 {  
+    border-radius: 25px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    margin: auto;
+    overflow: auto;
+  }
+  div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom:0;
+    float:right;
+    color: #454545;
+    font-family: 'Advent Pro';
+    font-size:12px;
+  }
+  .scroll {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+  }
+  input[type=text]:focus {
+    background-color: lightblue;
+  }
+  ::-webkit-input-placeholder {
+    color: #aeaeae;
+    font-size:12px;
+    font-weight:50;
+  }
+  input[type=text],input[type=number],.radios {
+    border-radius: 4px;
+    border: 1px solid:#8e8e8e;
+    color: #222222;
+    font-family: 'Advent Pro';
+    font-size:14px;
+    font-weight:250;
+  }
+  label {
+    color: #222222;
+    font-family: 'Advent Pro';
+    font-size:17px;
+    font-weight:150;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 80%
+  }
