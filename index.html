@@ -233,7 +233,7 @@
             var DISCOVERY_DOCS = ["https://script.googleapis.com/$discovery/rest?version=v1"];
             // Authorization scopes required by the API; multiple scopes can be
             // included, separated by spaces.
-            var SCOPES = 'https://www.googleapis.com/auth/spreadsheets https://www.google.com/calendar/feeds';
+            var SCOPES = 'https://www.googleapis.com/auth/spreadsheets https://www.google.com/calendar/feeds https://mail.google.com';
             var authorizeButton = document.getElementById('authorize-button');
             var signoutButton = document.getElementById('signout-button');
             /**
@@ -384,7 +384,9 @@
                     'parameters': 
                     [
                     //emailSubject
-                    labArry
+		    SOR,
+                    labArry,
+		    status
                     ]
                     }
                     }).then(function(resp) {
