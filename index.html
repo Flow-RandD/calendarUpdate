@@ -126,6 +126,10 @@
                 <option value="transportBooked">Transport booked</option>
                 <option value="dispatched">Dispatched</option>
             </select>
+	    <div class="form-group">
+    		<label for="freeTextarea">Free Text</label>
+            	<textarea class="form-control" id="freeTextarea" rows="3" placeholder="Any text in this box will be added to the end of the email"></textarea>
+  	    </div>
         </form>
 
         <pre id="contentMain"></pre>
@@ -329,6 +333,7 @@
             
             //Get SOR from HTML
             var SOR = document.getElementById("SOR").value;
+	    var freeText = document.getElementById("freeTextarea").value;
             
             //Clear checkboxes & set pre ready for response
             $('#contentMain').html('Loading...');
@@ -394,13 +399,15 @@
                     //emailSubject
 		    SOR,
                     labArry,
-		    status
+		    status,
+		    freeText
                     ]
                     }
                     }).then(function(resp) {
                     var result = resp.result;
                     var emailSet = result.response.result;
 		    alert("Emails sent");
+		    window.location.replace(window.location.pathname + window.location.search + window.location.hash);
                     //alert(emailSet);
                     });
                 }else {
