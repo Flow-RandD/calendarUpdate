@@ -1,6 +1,6 @@
 {
   "name": "Calendar Update",
-  "short_name": "calUP1",
+  "short_name": "calUP",
   "lang": "en-GB",
   "icons": [{
     "src": "images/calendar.png",
@@ -20,7 +20,7 @@
     "sizes": "192x192"
   }],
   "background_color": "#b3ffff",
-  "start_url": "https://flow-randd.github.io/calendarUpdate1/",
+  "start_url": "https://flow-randd.github.io/calendarUpdate/",
   "display": "fullscreen",
   "theme_color": "#b3ffff"
 }
