@@ -73,8 +73,8 @@
         </div>
 
         <form id="div2" style="display: none;">
-	<label for="statusSelect">Email Recipients</label>
-	<p class="font-weight-light" id=recipients>Suggested Recipients</p>
+	<label for="statusSelect">Suggested Email Recipients</label>
+	<p class="font-weight-light" id=recipients style="font-size: 50%"></p>
 	    <div class="form-check">
 		<label class="form-check-label">
       			<input class="form-check-input" type="checkbox" id="0" name="Sales">
@@ -247,7 +247,11 @@
 		
 	    function recipients(){
 		var statusValue = document.getElementById("status").value;
-	    	if (statusValue == 'intoProduction'){ //into Production
+	    	if (statusValue == 'eventCreated'){ //into Production
+    			var recipients = "N/A";
+    			$('#recipients').html(recipients);
+    		}
+		else if (statusValue == 'intoProduction'){ //into Production
     			var recipients = "Sales Person, Production, & Charlie";
     			$('#recipients').html(recipients);
     		}
@@ -255,7 +259,7 @@
     			var recipients = "Sales Person, Production, & Sales PC";
     			$('#recipients').html(recipients);    
     		}
-    		else if (statusValue == 'buildcomplete'){ //Build complete
+    		else if (statusValue == 'buildComplete'){ //Build complete
     			var recipients = "N/A";
     			$('#recipients').html(recipients);
     		}
