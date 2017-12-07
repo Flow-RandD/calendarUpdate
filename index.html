@@ -246,10 +246,10 @@
             }
 		
 	    function recipients(){
-		    alert('Its changed');
 		var statusValue = document.getElementById("status").value;
 	    	if (statusValue == 'into Production'){ //into Production
     			var recipients = "Sales Person, Production, & Charlie";
+			alert(recipients);
     			$('#recipients').html(recipients);
     		}
     		else if (statusValue == 'Target Date Changed'){ //Target Date Changed
