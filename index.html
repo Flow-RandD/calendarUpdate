@@ -247,37 +247,35 @@
 		
 	    function recipients(){
 		var statusValue = document.getElementById("status").value;
-		    alert(statusValue);
-	    	if (statusValue == 'into Production'){ //into Production
+	    	if (statusValue == 'intoProduction'){ //into Production
     			var recipients = "Sales Person, Production, & Charlie";
-			alert(recipients);
     			$('#recipients').html(recipients);
     		}
-    		else if (statusValue == 'Target Date Changed'){ //Target Date Changed
+    		else if (statusValue == 'dateChanged'){ //Target Date Changed
     			var recipients = "Sales Person, Production, & Sales PC";
     			$('#recipients').html(recipients);    
     		}
-    		else if (statusValue == 'Build complete'){ //Build complete
+    		else if (statusValue == 'buildcomplete'){ //Build complete
     			var recipients = "N/A";
     			$('#recipients').html(recipients);
     		}
-    		else if (statusValue == 'Quality Control complete'){ //Quality Control complete
+    		else if (statusValue == 'qualityComplete'){ //Quality Control complete
     			var recipients = "N/A";
     			$('#recipients').html(recipients);
     		}
-    		else if (statusValue == 'out for Customer Delivery Confirmation'){ //out for Customer Delivery Confirmation
+    		else if (statusValue == 'customerDeliveryConfirmation'){ //out for Customer Delivery Confirmation
     			var recipients = "Sales Person, Charlie, & Customer";
     			$('#recipients').html(recipients);
     		}
-    		else if (statusValue == 'Delivery Date confirmed'){ //Delivery Date confirmed
+    		else if (statusValue == 'deliveryDateConfirmed'){ //Delivery Date confirmed
     			var recipients = "N/A";
     			$('#recipients').html(recipients);
     		}
-    		else if (statusValue == 'Transport booked'){ //Transport booked
+    		else if (statusValue == 'transportBooked'){ //Transport booked
     			var recipients = "N/A";
     			$('#recipients').html(recipients);
     		}
-    		else if (statusValue == 'Dispatched'){ //Dispatched
+    		else if (statusValue == 'dispatched'){ //Dispatched
     			var recipients = "Sales Person";
     			$('#recipients').html(recipients);
     		}
