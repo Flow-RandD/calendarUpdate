@@ -473,12 +473,10 @@
           
             //Get SOR from HTML
             var SOR = document.getElementById("SOR").value;
-		alert(SOR);
 	    if (SOR === ""){
-		alert('here');
-		$('.modal-body').text('Moron Alert');
+		$('.modal-header').text("Moron Alert");
+		$('.modal-body').text("There's no SOR numb nuts!");
                 $('.modal-footer').empty();
-                $('#contentModal').text("There's no SOR numb nuts!");
 	    	$('#myModal').show()
 	    }	    
             //Clear checkboxes & set pre ready for response
