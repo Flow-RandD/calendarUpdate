@@ -209,7 +209,9 @@
     	   	.addEventListener("keydown", function(event) {
     		//event.preventDefault();
     		if (event.keyCode === 13) {
-        		document.getElementById("myBtn").click();
+			alert('enter')
+        		sorUpdate();
+			//document.getElementById("myBtn").click();
     		}
 	    });
             function emailAdds(){
@@ -239,6 +241,7 @@
             }
             
             function sorUpdate(){
+		    alert('SOR')
                 sorUpdateFunction();
             }
             
