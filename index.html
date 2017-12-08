@@ -206,13 +206,13 @@
             
         <script>
 	    document.getElementById("SOR")
-    	   	.addEventListener("keyup", function(event) {
+    	   	.addEventListener("keydown", function(event) {
     		event.preventDefault();
 		    alert(event.keyCode);
-    		if (event.keyCode === 13) {
-			alert('Enter');
-        		document.getElementById("myBtn").click();
-    		}
+    		//if (event.keyCode === 13) {
+		//	alert('Enter');
+        	//	document.getElementById("myBtn").click();
+    		//}
 	    });
             function emailAdds(){
                 //$('.modal-header').text('Select email recipients');
