@@ -47,7 +47,7 @@
         <h5>Please type the SOR you want to update</h5>
         <form name="formA">
             <div class="form-group">
-                <label class="font-weight-bold" id="locationLB">SOR:</label>
+                <label class="font-weight-bold" id="sorLB">SOR:</label>
                 <input type="text" class="form-control" id="SOR" name="SOR" placeholder="e.g 23778" style="width:100%" autocomplete="off">
             </div>
         </form>
@@ -205,6 +205,11 @@
         </script>
             
         <script>
+	    document.getElementById('email').onkeydown = function(e){
+   		if(e.keyCode == 13){
+     			sorUpdate();
+   		}
+	    };
             function emailAdds(){
                 //$('.modal-header').text('Select email recipients');
                 $('.modal-body').text('Now, please select email recipients...');
