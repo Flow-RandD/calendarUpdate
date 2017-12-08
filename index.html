@@ -372,6 +372,11 @@
                 }
                 },8000);
             }
+	
+	    /* Used to reset page after after invalid SOR */
+	    function resetPage() {
+	    	window.location.replace(window.location.pathname + window.location.search + window.location.hash);
+	    }
             
             
             /**
@@ -478,7 +483,7 @@
 		$('.modal-body').text("There's no SOR numb nuts!");
                 $('.modal-footer').empty();
 	    	$('#myModal').show()
-		setTimeout(window.location.replace(window.location.pathname + window.location.search + window.location.hash),3000);
+		setTimeout(resetPage,3000);
 	    }	    
             //Clear checkboxes & set pre ready for response
             //document.getElementById('content').style.display = 'none';
