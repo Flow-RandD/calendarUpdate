@@ -470,9 +470,15 @@
             //Called for SOR Update into Modal
             function sorUpdateFunction() {
             var scriptId = "1E6F27vZSW9_1l4x1_PgCaCGvGUPlUmSbsjQjrzwOiuITXezVlDjOtdq7";
-            
+          
             //Get SOR from HTML
             var SOR = document.getElementById("SOR").value;
+	    If (SOR === ""){
+		$('.modal-body').text('Moron Alert');
+                $('.modal-footer').empty();
+                $('#contentModal').text("There's no SOR numb nuts!");
+	    	$('#myModal').show()
+	    }	    
             //Clear checkboxes & set pre ready for response
             //document.getElementById('content').style.display = 'none';
             $('#contentMain').html('Loading...');
