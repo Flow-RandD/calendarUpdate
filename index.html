@@ -257,7 +257,8 @@
     		}
     		else if (statusValue == 'dateChanged'){ //Target Date Changed
     			var recipients = "Sales Person, Production, & Sales PC";
-    			$('#recipients').html(recipients);    
+    			$('#recipients').html(recipients);
+			alert('The CAD sheet should still have original date.\nHave you moved the Calendar Event?');
     		}
     		else if (statusValue == 'buildComplete'){ //Build complete
     			var recipients = "N/A";
