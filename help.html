@@ -63,302 +63,196 @@
         <p>As a job progresses through Flowstore each department will have to run various Calendar Updates. These Calendar Updates create or add information to the Deliveries calendar and provide updates to the Sales team (invited to the Calendar Events) and can be used to send automated emails to various recipients, including to the customer (be careful!).</p>
         <p>Below is a table showing update statuses, who is responsible for the update and who gets notified for each update.</p>		
 
-<table style="border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    <strong>Update</strong>
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    <strong>Person Responsible for Update</strong>
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    <strong>Recipients of Notifications</strong>
-                </p>
-            </td>
-            <td width="202" valign="top">
-                <p>
-                    <strong>Notes</strong>
-                </p>
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    <strong>Email Text</strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Event Created
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Charlie
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    N/A
-                </p>
-            </td>
-            <td width="202" valign="top">
-                <p>
-                    This is the first step which creates the calendar event.
-                </p>
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    N/A
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Into Production
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Andy/Wayno
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Charlie, Sales Person, Production
-                </p>
-            </td>
-            <td width="202" valign="top">
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "A brief update to let you know that SOR" + SOR + " has
-                    gone into Production\n\n" + freeText
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Non Stock Ordered
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Purchasing
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Charlie, Production
-                </p>
-            </td>
-            <td width="202" valign="top">
-                <p>
-                    This one hasn&#8217;t been added but could be useful as it
-                    will update the event to show the date the items were
-                    ordered and when they&#8217;re expected to be delivered.
-                </p>
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "A brief update to let you know that the non stock for SOR"
-                    + SOR + " has been ordered\n\n" + freeText
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Target Date Changed
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Charlie
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Sales Person, Sales PC, Production (if racks already in
-                    production)
-                </p>
-            </td>
-            <td width="202" valign="top">
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "A brief update to let you know that the Live Target Date
-                    for SOR" + SOR + " has changed to " + [DATE] + "\n\n" +
-                    freeText
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Build Complete
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Andy/Wayno
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Charlie, Quality, Transport, Sales Person
-                </p>
-            </td>
-            <td width="202" valign="top">
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "A brief update to let you know that SOR" + SOR + " has
-                    been built and will now proceed to Quality Control." +
-                    "\n\n" + freeText
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Quality Control Complete
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Quality
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Sales Person, Charlie, Transport
-                </p>
-            </td>
-            <td width="202" valign="top">
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "A brief update to let you know that SOR" + SOR + " has
-                    been through Quality Control and we will now be confirming
-                    the delivery with the customer." + "\n\n" + freeText
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Out for Customer Delivery Confirmation
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Charlie
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Charlie, Customer, Sales Person
-                </p>
-            </td>
-            <td width="202" valign="top">
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "Dear Customer\n\nSOR" + SOR + " is almost ready to
-                    deliver. Please reply to this message to confirm that you
-                    can still accept delivery on " + [DATE] + ".\n\n" +
-                    freeText + "\n\n Additionally please check that the
-                    following details we have on the ESI form, previously sent,
-                    are correct:" [ESI INFO]
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Delivery Date Confirmed
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Charlie
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Transport
-                </p>
-            </td>
-            <td width="202" valign="top">
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "A brief update to let you know that delivery of SOR" + SOR
-                    + " has been confirmed with the customer please proceed to
-                    dispatch." + "\n\n" + freeText
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Transport Booked
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Transport
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Charlie, Salesperson?
-                </p>
-            </td>
-            <td width="202" valign="top">
-                <p>
-                    This one we&#8217;re thinking of removing as we&#8217;re
-                    not sure if it really serves a purpose
-                </p>
-            </td>
-            <td width="181" valign="top">
-            </td>
-        </tr>
-        <tr>
-            <td width="107" valign="top">
-                <p>
-                    Dispatched
-                </p>
-            </td>
-            <td width="107" valign="top">
-                <p>
-                    Transport
-                </p>
-            </td>
-            <td width="114" valign="top">
-                <p>
-                    Charlie, Salesperson, Customer
-                </p>
-            </td>
-            <td width="202" valign="top">
-            </td>
-            <td width="181" valign="top">
-                <p>
-                    "A brief update to let you know that SOR" + SOR + " has
-                    been dispatched.\n\n" + freeText
-                </p>
-            </td>
-        </tr>
-    </tbody>
+<table style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p><strong>Update</strong></p>
+</td>
+<td style="width: 80.55pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p><strong>Person Responsible for Update</strong></p>
+</td>
+<td style="width: 85.55pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p><strong>Recipients of Notifications</strong></p>
+</td>
+<td style="width: 151.75pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p><strong>Notes</strong></p>
+</td>
+<td style="width: 135.95pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p><strong>Email Text</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Event Created</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Charlie</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>N/A</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>This is the first step which creates the calendar event.</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>N/A</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Into Production</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Andy/Wayno</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Charlie, Sales Person, Production</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>&nbsp;</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"A brief update to let you know that SOR" + SOR + " has gone into Production\n\n" + freeText</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; background: #92D050; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Non Stock Ordered</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #92D050; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Purchasing</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #92D050; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Charlie, Production</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #92D050; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>This one hasn&rsquo;t been added but could be useful as it will update the event to show the date the items were ordered and when they&rsquo;re expected to be delivered.</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #92D050; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"A brief update to let you know that the non stock for&nbsp; SOR" + SOR + " has been ordered\n\n" + freeText</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Target Date Changed</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Charlie</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Sales Person, Sales PC, Production (if racks already in production)</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>&nbsp;</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"A brief update to let you know that the Live Target Date for SOR" + SOR + " has changed to " + [DATE] + "\n\n" + freeText</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Build Complete</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Andy/Wayno</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Charlie, Quality, Transport, Sales Person</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>&nbsp;</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"A brief update to let you know that SOR" + SOR + " has been built and will now proceed to Quality Control." + "\n\n" + freeText</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Quality Control Complete</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Quality</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Sales Person, Charlie, Transport</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>&nbsp;</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"A brief update to let you know that SOR" + SOR + " has been through Quality Control and we will now be confirming the delivery with the customer." + "\n\n" + freeText</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Out for Customer Delivery Confirmation</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Charlie</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Charlie, Customer, Sales Person</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>&nbsp;</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"Dear Customer\n\nSOR" + SOR + " is almost ready to deliver. Please reply to this message to confirm that you can still accept delivery on " + [DATE] + ".\n\n" + freeText + "\n\n Additionally please check that the following details we have on the ESI form, previously sent, are correct:" [ESI INFO]</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Delivery Date Confirmed</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Charlie</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Transport</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>&nbsp;</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"A brief update to let you know that delivery of SOR" + SOR + " has been confirmed with the customer please proceed to dispatch." + "\n\n" + freeText</p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; background: red; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p><span style="font-size: 10.0pt; background: yellow;">Transport Booked</span></p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: red; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p><span style="font-size: 10.0pt; background: yellow;">Transport</span></p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: red; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p><span style="font-size: 10.0pt; background: yellow;">Charlie, Salesperson?</span></p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: red; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p><span style="font-size: 10.0pt; background: yellow;">This one we&rsquo;re thinking of removing as we&rsquo;re not sure if it really serves a purpose</span></p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: red; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p><span style="font-size: 10.0pt; background: yellow;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 80.3pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Dispatched</p>
+</td>
+<td style="width: 80.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="107">
+<p>Transport</p>
+</td>
+<td style="width: 85.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="114">
+<p>Charlie, Salesperson, Customer</p>
+</td>
+<td style="width: 151.75pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="202">
+<p>&nbsp;</p>
+</td>
+<td style="width: 135.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 0cm 0cm 0cm;" width="181">
+<p>"A brief update to let you know that SOR" + SOR + " has been dispatched.\n\n" + freeText</p>
+</td>
+</tr>
+</tbody>
 </table>
 </div>
 		
