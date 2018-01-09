@@ -469,8 +469,8 @@
                 // Script Object with String keys and values, and so the result
                 // is treated as a JavaScript object (folderSet).
                 clearTimeout(myTimeout);
-                //var calendarResponse = result.response.result;
-                var calendarResponse = "Response = " + resp + " The Calendar Event has been updated, would you like to continue and send email notifications? Click 'Cancel' if you are only updating the calendar"
+                var calendarMistake = result.mistake.result;
+                var calendarResponse = "Response = " + calendarMistake + " The Calendar Event has been updated, would you like to continue and send email notifications? Click 'Cancel' if you are only updating the calendar"
                 $('#contentMain').html('');
                 var r = confirm(calendarResponse);
                 if (r == true){
