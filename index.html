@@ -470,7 +470,11 @@
                 // is treated as a JavaScript object (folderSet).
                 clearTimeout(myTimeout);
                 var calendarMistake = result.response.result;
-                var calendarResponse = "Response = " + calendarMistake + " The Calendar Event has been updated, would you like to continue and send email notifications? Click 'Cancel' if you are only updating the calendar"
+			if (calendarMistake == undefined){
+				var calendarResponse = calendarMistake;
+			}else {
+                		var calendarResponse = "The Calendar Event has been updated, would you like to continue and send email notifications? Click 'Cancel' if you are only updating the calendar"
+			}
                 $('#contentMain').html('');
                 var r = confirm(calendarResponse);
                 if (r == true){
