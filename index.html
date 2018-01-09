@@ -470,7 +470,8 @@
                 // is treated as a JavaScript object (folderSet).
                 clearTimeout(myTimeout);
                 var calendarMistake = result.response.result;
-			if (calendarMistake.indexOf('Willis')>0){
+			alert(calendarMistake);
+			if (calendarMistake === undefined){
 				var calendarResponse = calendarMistake;
 			}else {
                 		var calendarResponse = "The Calendar Event has been updated, would you like to continue and send email notifications? Click 'Cancel' if you are only updating the calendar"
