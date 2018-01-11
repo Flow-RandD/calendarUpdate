@@ -290,11 +290,11 @@
 			alert('The CAD sheet should still have original dates, this will be updated for you.\n\nHave you moved the Calendar Event to the new date?');
     		}
     		else if (statusValue == 'buildComplete'){ //Build complete
-    			var recipients = "N/A";
+    			var recipients = "Sales Person, Charlie, Quality, Transport";
     			$('#recipients').html(recipients);
     		}
     		else if (statusValue == 'qualityComplete'){ //Quality Control complete
-    			var recipients = "N/A";
+    			var recipients = "Sales Person, Charlie, Transport";
     			$('#recipients').html(recipients);
     		}
     		else if (statusValue == 'customerDeliveryConfirmation'){ //out for Customer Delivery Confirmation
@@ -302,11 +302,11 @@
     			$('#recipients').html(recipients);
     		}
     		else if (statusValue == 'deliveryDateConfirmed'){ //Delivery Date confirmed
-    			var recipients = "N/A";
+    			var recipients = "Transport";
     			$('#recipients').html(recipients);
     		}
     		else if (statusValue == 'transportBooked'){ //Transport booked
-    			var recipients = "N/A";
+    			var recipients = "Sales Person, Charlie, & Customer";
     			$('#recipients').html(recipients);
     		}
     		else if (statusValue == 'dispatched'){ //Dispatched
